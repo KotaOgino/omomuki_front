@@ -1,0 +1,27 @@
+.App-logo {
+  pointer-events: none;
+  width: 140px;
+  height: 23px;
+  float: left;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+.ant-layout-header {
+  background: none!important;
+}
+
+.menu-items{
+  float: right;
+  color: #ffffff;
+  font-size: 11px;
+  background: none;
+  border-bottom: none;
+}
+
+.menu-item{
+  line-height: 16px;
+}

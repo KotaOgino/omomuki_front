@@ -1,0 +1,21 @@
+@import '~antd/dist/antd.css';
+@import './scss/header.scss';
+@import './scss/contents.scss';
+@import './scss/footer.scss';
+
+body{
+  font-family: Noto Sans JP;
+}
+
+.App {
+  text-align: center;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
