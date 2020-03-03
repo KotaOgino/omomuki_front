@@ -1,0 +1,43 @@
+.App-header {
+  position: relative;
+  height: 80vh;
+  background-image: url("../../img/home.svg");
+  text-align: center;
+}
+
+.top-form {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .ant-card-body {
+    width: $font-size-base*25.75;
+  }
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    font-size: $font-size-base*1.75;
+    padding-bottom: $font-size-base*1.5;
+  }
+
+  img {
+    padding-bottom: $font-size-base*1.5;
+    width: 100%;
+  }
+
+  .ant-input {
+    max-width: 100%;
+  }
+
+  .ant-input-prefix {
+    left: 0!important;
+    padding-left: 5px;
+  }
+
+  .ant-btn {
+    width: 100%;
+    color: #ffffff;
+    background-color: #111111;
+  }
+}

@@ -1,15 +1,20 @@
+// antd
 @import '~antd/dist/antd.css';
+// variable
+@import './scss/variables.scss';
+// reset
+@import './scss/reset.scss';
+// common
+@import './scss/contents/common.scss';
+// header
 @import './scss/header.scss';
+// mainvisual
+@import './scss/contents/mainvisual.scss';
+// contents
 @import './scss/contents.scss';
+// footer
 @import './scss/footer.scss';
 
-body{
-  font-family: Noto Sans JP;
-}
-
-.App {
-  text-align: center;
-}
 
 /* @keyframes App-logo-spin {
   from {

@@ -3,14 +3,18 @@ import Recomendation from './Contents/Recomendation';
 import Tours from './Contents/Tours';
 import Categories from './Contents/Categories';
 
+import { Layout } from 'antd';
+
+const { Content } = Layout;
+
 export default class Contents extends React.Component {
   render() {
     return (
-      <div className="App-contents">
+      <Content className="App-contents">
       <Recomendation />
-      <Tours />
       <Categories />
-      </div>
+      <Tours />
+      </Content>
     );
   }
 }
