@@ -7,15 +7,13 @@ import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-    <BrowserRouter>
+    <BrowserRouter className="App">
       <Switch>
         <Route path="/" exact children={<Home />} />
         <Route path="/mypage" children={<MyPage />} />
         <Route path="/cart" children={<Cart />} />
       </Switch>
     </BrowserRouter>
-    </div>
   );
 }
 

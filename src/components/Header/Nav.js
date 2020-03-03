@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
-import logo from '../../img/logo.svg';
+import { Link } from 'react-router-dom';
 import { Layout, Menu, Row, Col } from 'antd';
+import logo from '../../img/logo.svg';
 import { Briefcase } from 'react-feather';
 import { User } from 'react-feather';
 

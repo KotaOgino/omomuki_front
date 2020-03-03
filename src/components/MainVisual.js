@@ -12,7 +12,7 @@ export default class MainVisual extends React.Component {
         <h2>ツアーを検索</h2>
         <img src={mainvisual} className="mainvisual" alt="mainvisual" />
         <Input size="large" placeholder="  エリア・キーワードで探す" prefix={ <Search /> } />
-        <Button size="large" className="mt-05">
+        <Button type="primary" size="large" className="mt-05">
           日程を確定する
         </Button>
       </Card>
