@@ -1,0 +1,19 @@
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+
+.container {
+  max-width: $breakpoint-xlg;
+  margin: 0 auto;
+  @include media-lg() {
+    max-width: $breakpoint-lg;
+  }
+  @include media-md() {
+    max-width: $breakpoint-md;
+  }
+  @include media-sm() {
+    max-width: $breakpoint-sm;
+  }
+}

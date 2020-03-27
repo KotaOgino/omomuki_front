@@ -1,8 +1,12 @@
 .pc-header {
+  z-index: 999;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
+  padding: $font-size-xl $font-size-base*2;
   background-color: rgba($white, 0);
   border: 0;
+  line-height: 0;
 }

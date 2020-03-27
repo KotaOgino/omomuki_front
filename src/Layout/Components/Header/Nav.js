@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../../img/logo.svg';
+import logo from '../images/logo.svg';
 
-import { Layout, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import { Briefcase, User } from 'react-feather';
-
-const { Header } = Layout;
 
 export default class Nav extends React.Component {
   render() {
     return (
-      <Header className="pc-header">
+      <header className="pc-header">
         <Row justify="space-between">
           <Col>
             <div className="logo">
@@ -35,7 +33,7 @@ export default class Nav extends React.Component {
             </Row>
           </Col>
         </Row>
-      </Header>
+      </header>
     );
   }
 }
