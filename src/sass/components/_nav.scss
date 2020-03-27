@@ -15,6 +15,10 @@
     text-align: center;
     color: $white;
 
+    &:last-of-type {
+      margin-left: $font-size-base;
+    }
+
     span {
       display: block;
       margin-top: $font-size-base * 0.3;

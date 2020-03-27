@@ -3,27 +3,40 @@
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: $font-size-md;
+
   img {
     max-width: 100%;
     height: auto;
     vertical-align: baseline;
   }
 
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: bold;
+  }
+
+  .sec {
+    padding: $font-size-base * 2 0;
+  }
+
   .container {
     max-width: $breakpoint-xlg;
+    box-sizing: border-box;
     margin: 0 auto;
+    padding: 0 $font-size-base;
+
     @include media-lg() {
       max-width: $breakpoint-lg;
     }
+
     @include media-md() {
       max-width: $breakpoint-md;
     }
+
     @include media-sm() {
       max-width: $breakpoint-sm;
     }
-  }
-
-  h2,h3,h4,h5 {
-    font-weight: bold;
   }
 }
