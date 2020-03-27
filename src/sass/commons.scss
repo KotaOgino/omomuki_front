@@ -1,19 +1,29 @@
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: baseline;
-}
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap");
 
-.container {
-  max-width: $breakpoint-xlg;
-  margin: 0 auto;
-  @include media-lg() {
-    max-width: $breakpoint-lg;
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: $font-size-md;
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: baseline;
   }
-  @include media-md() {
-    max-width: $breakpoint-md;
+
+  .container {
+    max-width: $breakpoint-xlg;
+    margin: 0 auto;
+    @include media-lg() {
+      max-width: $breakpoint-lg;
+    }
+    @include media-md() {
+      max-width: $breakpoint-md;
+    }
+    @include media-sm() {
+      max-width: $breakpoint-sm;
+    }
   }
-  @include media-sm() {
-    max-width: $breakpoint-sm;
+
+  h2,h3,h4,h5 {
+    font-weight: bold;
   }
 }

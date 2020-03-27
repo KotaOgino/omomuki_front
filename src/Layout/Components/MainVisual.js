@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Input, Button } from 'antd';
-import { Search } from 'react-feather';
+import { SearchOutlined } from '@ant-design/icons';
 import mainvisual from './images/mainvisual.svg';
 import bg_mv from './images/bg_mv.png';
 
@@ -16,8 +16,8 @@ export default class MainVisual extends React.Component {
           <Card>
             <h2>ツアーを検索</h2>
             <img src={mainvisual} alt="mainvisual" />
-            <Input placeholder="エリア・キーワードで探す" prefix={<Search />} />
-            <Button type="primary" size="large" className="mt-05">日程を確定する</Button>
+            <Input size="large" placeholder="エリア・キーワードで探す" prefix={<SearchOutlined />} />
+            <Button type="primary" size="large">日程を確認する</Button>
           </Card>
         </div>
       </section>
