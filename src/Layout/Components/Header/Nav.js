@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../images/logo.svg';
 
 import { Row, Col } from 'antd';
-import { Briefcase, User } from 'react-feather';
+import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 
 export default class Nav extends React.Component {
   render() {
@@ -13,20 +13,22 @@ export default class Nav extends React.Component {
         <Row justify="space-between" align="middle">
           <Col>
             <div className="logo">
-              <img src={logo} alt="logo" />
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
             </div>
           </Col>
           <Col>
             <Row align="middle">
-              <Col>
+              <Col style={{ marginRight: '1rem' }}>
                 <Link to="/cart" className="nav-link">
-                  <Briefcase size={20} />
+                  <ShoppingCartOutlined style={{ fontSize: '1.5rem' }} />
                   <span>カート</span>
                 </Link>
               </Col>
               <Col>
                 <Link to='/mypage' className="nav-link">
-                  <User size={20} />
+                  <UserOutlined style={{ fontSize: '1.5rem' }} />
                   <span>マイページ</span>
                 </Link>
               </Col>

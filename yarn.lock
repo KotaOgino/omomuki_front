@@ -9273,9 +9273,9 @@ rc-switch@~1.9.0:
     react-lifecycles-compat "^3.0.4"
 
 rc-table@~7.3.0:
-  version "7.3.12"
-  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-7.3.12.tgz#b87872f83c6326a4307eed60d7bdf42bf40936a1"
-  integrity sha512-eJhB0oWmTWPoFa8LX3Oad1R1K1CB8oObbEtRyHy6VSFYwxcHAKuryZCPW8BpTakudsZ2TpMdI4GNB6Is3haNeQ==
+  version "7.3.13"
+  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-7.3.13.tgz#18c363a680b04ffb55071021aef3e43189af74ec"
+  integrity sha512-BExHR08n3fg6wSmBIjIrlxPnfEsKYIF4oD/a5tSerr2fBWQNZ7cbBY/1Si8V4GbjYSdJ/9/HeeQbAerh2X4XVw==
   dependencies:
     classnames "^2.2.5"
     component-classes "^1.2.6"

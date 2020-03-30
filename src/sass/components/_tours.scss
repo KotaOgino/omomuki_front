@@ -1,0 +1,32 @@
+.tours-list {
+  .tours-area {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: $font-size-base * 0.2 $font-size-base * 0.4;
+    border: solid 1px $dark;
+    border-radius: 2px;
+    font-size: $font-size-sm;
+    line-height: 1;
+    color: $dark;
+  }
+
+  h3 {
+    margin: $font-size-base 0;
+
+    &+p {
+      display: flex;
+      margin: 0;
+      color: $dark;
+
+      .tours-time,
+      .tours-count {
+        margin-right: $font-size-base;
+      }
+
+      .tours-price {
+        font-weight: bold;
+      }
+    }
+  }
+}

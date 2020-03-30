@@ -15,11 +15,7 @@
     text-align: center;
     color: $white;
 
-    &:last-of-type {
-      margin-left: $font-size-base;
-    }
-
-    span {
+    span:not(.anticon) {
       display: block;
       margin-top: $font-size-base * 0.3;
       font-size: $font-size-xs;
