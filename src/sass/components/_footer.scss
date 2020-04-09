@@ -9,4 +9,16 @@
       }
     }
   }
+
+  .foot-logo,
+  .language-menu,
+  .other-links,
+  .copyright {
+    text-align: center;
+  }
+
+  .language-menu,
+  .other-links {
+    margin-top: $font-size-base * 2;
+  }
 }

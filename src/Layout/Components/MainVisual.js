@@ -17,7 +17,7 @@ export default class MainVisual extends React.Component {
             <h2>ツアーを検索</h2>
             <img src={mainvisual} alt="mainvisual" />
             <Input size="large" placeholder="エリア・キーワードで探す" prefix={<SearchOutlined />} />
-            <Button type="primary" size="large">日程を確認する</Button>
+            <Button type="primary" size="large">ツアーを検索する</Button>
           </Card>
         </div>
       </section>

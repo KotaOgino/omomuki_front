@@ -12,9 +12,9 @@
   }
 
   h3 {
-    margin: $font-size-base 0;
+    margin: $font-size-base * 0.5 0;
 
-    &+p {
+    & + p {
       display: flex;
       margin: 0;
       color: $dark;
@@ -28,5 +28,50 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+.recommend-tours {
+  .thumbnail {
+    margin-bottom: $font-size-base * 0.5;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .tours-area {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: $font-size-base * 0.2 $font-size-base * 0.4;
+    border: solid 1px $dark;
+    border-radius: 2px;
+    font-size: $font-size-sm;
+    line-height: 1;
+    color: $dark;
+  }
+
+  h3 {
+    font-size: $font-size-base;
+    margin: $font-size-base * 0.5 0;
+
+    & + p {
+      display: flex;
+      margin: 0;
+      color: $dark;
+
+      .tours-time,
+      .tours-count {
+        margin-right: $font-size-base;
+      }
+    }
+  }
+
+  .tours-price {
+    font-weight: bold;
+    margin: $font-size-base * 0.5 0 0;
   }
 }

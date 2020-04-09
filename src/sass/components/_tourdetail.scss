@@ -1,0 +1,25 @@
+.tour-detail {
+  .tour-detail-info {
+    background-color: $dark;
+
+    .tour-detail-slide {
+      font-size: 0;
+    }
+
+    .tour-detail-price {
+      font-size: $font-size-lg;
+      font-weight: bold;
+    }
+  }
+
+  .tour-content {
+    .tour-review {
+      .ant-list-items {
+        h3 {
+          margin: 0;
+          padding-top: $font-size-base;
+        }
+      }
+    }
+  }
+}

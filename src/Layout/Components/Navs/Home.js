@@ -2,15 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../images/logo.svg';
+import logo_black from '../images/logo_black.svg';
 
 import { Row, Col } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 
-export default class Nav extends React.Component {
+export default class NavHome extends React.Component {
   render() {
     return (
-      <header className="pc-header">
-        <Row justify="space-between" align="middle">
+      <header>
+        <div className="home-sp-header">
+          <Link to="/">
+            <img src={logo_black} alt="logo" />
+          </Link>
+        </div>
+        <Row className="home-pc-header" justify="space-between" align="middle">
           <Col>
             <div className="logo">
               <Link to="/">
@@ -20,7 +26,7 @@ export default class Nav extends React.Component {
           </Col>
           <Col>
             <Row align="middle">
-              <Col style={{ marginRight: '1rem' }}>
+              <Col style={{ marginRight: '2rem' }}>
                 <Link to="/cart" className="nav-link">
                   <ShoppingCartOutlined style={{ fontSize: '1.5rem' }} />
                   <span>カート</span>
