@@ -1,3 +1,13 @@
-.ant-btn {
-  font-size: $font-size-md !important;
+.ant-collapse-borderless {
+  background-color: $white;
+}
+
+.ant-result-icon {
+  .anticon {
+    &.anticon-check-circle {
+      svg {
+        fill: $primary;
+      }
+    }
+  }
 }

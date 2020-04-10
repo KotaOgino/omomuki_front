@@ -1,13 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 import Header from '../Components/Navs/Lower';
 import Footer from '../Components/Footers';
-// import Section from '../Components/Sections/Section';
+import MediaQuery from 'react-responsive';
 import H2 from '../Components/Heading/Head2nd';
 import H3 from '../Components/Heading/Head3rd';
 
 import { Row, Col, Carousel, Space, Timeline, Affix, Card, Button, Comment, List, Collapse } from 'antd';
 import { ClockCircleOutlined, UserOutlined, CalendarOutlined, StarFilled } from '@ant-design/icons';
 
+const { Panel } = Collapse;
 const data = [
   {
     title: 'めちゃめちゃ最高です',
@@ -56,7 +59,10 @@ const data = [
   },
 ];
 
-export default class Mypage extends React.Component {
+class TourDetail extends React.Component {
+  handleToDateSelect = () => {
+    this.props.history.push('/date-select')
+  }
   render() {
     let setting = {
       slidesToShow: 4,
@@ -65,6 +71,16 @@ export default class Mypage extends React.Component {
       swipeToSlide: true,
       infinite: true,
       autoplay: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: false,
+          }
+        }
+      ]
     };
     return (
       <>
@@ -161,40 +177,61 @@ export default class Mypage extends React.Component {
                     </div>
                     <div className="tour-overview sec">
                       <H2 title="ツアー情報" />
-                      <Collapse>
+                      <Collapse bordered={false} expandIconPosition={"right"}>
                         <Panel header="料金に含まれるもの">
+                          <p>宿泊費用</p>
+                        </Panel>
+                        <Panel header="料金に含まれるもの">
+                          <p>宿泊費用</p>
+                        </Panel>
+                        <Panel header="料金に含まれるもの">
+                          <p>宿泊費用</p>
+                        </Panel>
+                        <Panel header="料金に含まれるもの">
+                          <p>宿泊費用</p>
                         </Panel>
                       </Collapse>
                     </div>
                   </Col>
-                  <Col md={8}>
-                    <Affix offsetTop={10}>
-                      <Card>
-                        <H3 className="text-center" title={"京都の寺社仏閣穴場めぐりツアー"} />
-                        <div className="text-center">
-                          <span className="omk__badge">京都</span>
-                        </div>
-                        <p style={{ margin: '1rem 0' }}>素敵な素敵なガイドさんの最高に最高な案内で京都をとにかくはちゃめちゃに楽しむツアーです。地元のガイドならではの視点で、京都中の穴場という穴場を味わいつくすことができます。</p>
-                        <div className="text-center">
-                          <Space>
-                            <span className="tour-detail-time"><ClockCircleOutlined /> 12時間</span>
-                            <span className="tour-detail-count"><UserOutlined /> 1名〜</span>
-                          </Space>
-                        </div>
-                        <p className="tour-detail-price text-center" style={{ margin: '1rem 0' }}>¥8,000/1名</p>
-                        <Button type="primary" size="large" block>
-                          <CalendarOutlined />日程を確認する
+                  <MediaQuery minDeviceWidth={769}>
+                    <Col md={8}>
+                      <Affix offsetTop={10}>
+                        <Card>
+                          <H3 className="text-center" title={"京都の寺社仏閣穴場めぐりツアー"} />
+                          <div className="text-center">
+                            <span className="omk__badge">京都</span>
+                          </div>
+                          <p style={{ margin: '1rem 0' }}>素敵な素敵なガイドさんの最高に最高な案内で京都をとにかくはちゃめちゃに楽しむツアーです。地元のガイドならではの視点で、京都中の穴場という穴場を味わいつくすことができます。</p>
+                          <div className="text-center">
+                            <Space>
+                              <span className="tour-detail-time"><ClockCircleOutlined /> 12時間</span>
+                              <span className="tour-detail-count"><UserOutlined /> 1名〜</span>
+                            </Space>
+                          </div>
+                          <p className="tour-detail-price text-center" style={{ margin: '1rem 0' }}>¥8,000/1名</p>
+                          <Button onClick={this.handleToDateSelect} type="primary" size="large" block>
+                            <CalendarOutlined />日程を確認する
                         </Button>
-                      </Card>
-                    </Affix>
-                  </Col>
+                        </Card>
+                      </Affix>
+                    </Col>
+                  </MediaQuery>
                 </Row>
               </div>
             </div>
           </section>
         </main>
         <Footer />
+        <MediaQuery maxDeviceWidth={768}>
+          <Affix offsetBottom={16}>
+            <div className="container">
+              <Button onClick={this.handleToDateSelect} type="primary" size="large" block><CalendarOutlined />日程を確認する</Button>
+            </div>
+          </Affix>
+        </MediaQuery>
       </>
     );
   }
 }
+
+export default withRouter(TourDetail)

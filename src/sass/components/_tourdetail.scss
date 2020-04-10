@@ -4,6 +4,9 @@
 
     .tour-detail-slide {
       font-size: 0;
+      @include media-md() {
+        padding: $font-size-lg $font-size-lg 0;
+      }
     }
 
     .tour-detail-price {

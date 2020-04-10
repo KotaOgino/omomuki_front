@@ -41,6 +41,9 @@
   box-sizing: border-box;
   padding: $font-size-base $font-size-base * 2;
   border-bottom: solid 1px $gray-4;
+  @include media-md() {
+    display: none;
+  }
 
   .logo {
     img {

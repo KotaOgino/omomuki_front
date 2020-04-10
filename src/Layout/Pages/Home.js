@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 import NavHome from '../Components/Navs/Home';
 import Footer from '../Components/Footers';
 import MainVisual from '../Components/MainVisual';
@@ -9,7 +11,10 @@ import Btn from '../Components/Buttons';
 import { Card, Col, Row } from 'antd';
 import { ClockCircleOutlined, UserOutlined } from '@ant-design/icons';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
+  handleToDetail = () => {
+    this.props.history.push('/tour-detail')
+  }
   render() {
     return (
       <>
@@ -20,7 +25,7 @@ export default class Home extends React.Component {
             <Heading2nd title={"おすすめのツアー"} />
             <Row gutter={[32, 32]} className="tours-list">
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />}>
+                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -35,7 +40,7 @@ export default class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />}>
+                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -50,7 +55,7 @@ export default class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />}>
+                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -65,7 +70,7 @@ export default class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />}>
+                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -80,7 +85,7 @@ export default class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />}>
+                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -95,7 +100,7 @@ export default class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />}>
+                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -185,7 +190,7 @@ export default class Home extends React.Component {
           <Section>
             <Heading2nd title={"おすすめのツアー"} />
             <Row gutter={[32, 32]} className="recommend-tours">
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -201,7 +206,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -217,7 +222,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -233,7 +238,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -249,7 +254,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -265,7 +270,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -281,7 +286,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -297,7 +302,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -313,7 +318,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -329,7 +334,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -345,7 +350,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -361,7 +366,7 @@ export default class Home extends React.Component {
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
                   <img src="/images/recommend_sample.png" alt="example" />
                 </div>
@@ -388,3 +393,5 @@ export default class Home extends React.Component {
     );
   }
 }
+
+export default withRouter(Home)
