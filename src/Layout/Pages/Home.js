@@ -13,8 +13,8 @@ import { ClockCircleOutlined, UserOutlined } from '@ant-design/icons';
 
 class Home extends React.Component {
   handleToDetail = () => {
-    this.props.history.push('/tour-detail')
-  }
+    this.props.history.push('/tour-detail');
+  };
   render() {
     return (
       <>
@@ -22,10 +22,14 @@ class Home extends React.Component {
         <main>
           <MainVisual />
           <Section>
-            <Heading2nd title={"おすすめのツアー"} />
+            <Heading2nd title={'おすすめのツアー'} />
             <Row gutter={[32, 32]} className="tours-list">
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
+                <Card
+                  hoverable
+                  cover={<img src="/images/tour_sample.png" alt="example" />}
+                  onClick={this.handleToDetail}
+                >
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -40,7 +44,11 @@ class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
+                <Card
+                  hoverable
+                  cover={<img src="/images/tour_sample.png" alt="example" />}
+                  onClick={this.handleToDetail}
+                >
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -55,7 +63,11 @@ class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
+                <Card
+                  hoverable
+                  cover={<img src="/images/tour_sample.png" alt="example" />}
+                  onClick={this.handleToDetail}
+                >
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -70,7 +82,11 @@ class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
+                <Card
+                  hoverable
+                  cover={<img src="/images/tour_sample.png" alt="example" />}
+                  onClick={this.handleToDetail}
+                >
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -85,7 +101,11 @@ class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
+                <Card
+                  hoverable
+                  cover={<img src="/images/tour_sample.png" alt="example" />}
+                  onClick={this.handleToDetail}
+                >
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -100,7 +120,11 @@ class Home extends React.Component {
                 </Card>
               </Col>
               <Col md={8}>
-                <Card hoverable cover={<img src="/images/tour_sample.png" alt="example" />} onClick={this.handleToDetail}>
+                <Card
+                  hoverable
+                  cover={<img src="/images/tour_sample.png" alt="example" />}
+                  onClick={this.handleToDetail}
+                >
                   <span className="tours-area">京都</span>
                   <h3>京都をとにかく楽しむ素敵な素敵なガイドツアー</h3>
                   <p>
@@ -115,12 +139,12 @@ class Home extends React.Component {
                 </Card>
               </Col>
             </Row>
-            <div style={{ textAlign: "center" }}>
-              <Btn label={"もっと見る"} type={"default"} size={"large"} />
+            <div style={{ textAlign: 'center' }}>
+              <Btn label={'もっと見る'} type={'default'} size={'large'} />
             </div>
           </Section>
           <Section>
-            <Heading2nd title={"カテゴリー"} />
+            <Heading2nd title={'カテゴリー'} />
             <Row gutter={[32, 32]} className="category-list">
               <Col xs={12} sm={12} md={4}>
                 <div className="category">
@@ -183,12 +207,12 @@ class Home extends React.Component {
                 </div>
               </Col>
             </Row>
-            <div style={{ textAlign: "center" }}>
-              <Btn label={"もっと見る"} type={"default"} size={"large"} />
+            <div style={{ textAlign: 'center' }}>
+              <Btn label={'もっと見る'} type={'default'} size={'large'} />
             </div>
           </Section>
           <Section>
-            <Heading2nd title={"おすすめのツアー"} />
+            <Heading2nd title={'おすすめのツアー'} />
             <Row gutter={[32, 32]} className="recommend-tours">
               <Col xs={12} sm={12} md={4} onClick={this.handleToDetail}>
                 <div className="thumbnail">
@@ -199,10 +223,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -215,10 +239,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -231,10 +255,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -247,10 +271,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -263,10 +287,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -279,10 +303,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -295,10 +319,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -311,10 +335,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -327,10 +351,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -343,10 +367,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -359,10 +383,10 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
@@ -375,16 +399,16 @@ class Home extends React.Component {
                 <p>
                   <span className="tours-time">
                     <ClockCircleOutlined /> 12時間
-                    </span>
+                  </span>
                   <span className="tours-count">
                     <UserOutlined /> 1名〜
-                    </span>
+                  </span>
                 </p>
                 <p className="tours-price">¥8,000/1名</p>
               </Col>
             </Row>
-            <div style={{ textAlign: "center" }}>
-              <Btn label={"もっと見る"} type={"default"} size={"large"} />
+            <div style={{ textAlign: 'center' }}>
+              <Btn label={'もっと見る'} type={'default'} size={'large'} />
             </div>
           </Section>
         </main>
@@ -394,4 +418,4 @@ class Home extends React.Component {
   }
 }
 
-export default withRouter(Home)
+export default withRouter(Home);
