@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import axios from 'axios';
+
 import Header from '../Components/Navs/Lower';
 import Footer from '../Components/Footers';
 import MediaQuery from 'react-responsive';
@@ -12,57 +14,101 @@ import { ClockCircleOutlined, UserOutlined, CalendarOutlined, StarFilled } from 
 
 const { Panel } = Collapse;
 const data = [
-  {
-    title: 'めちゃめちゃ最高です',
-    datetime: '2020-04-10',
-    content: (
-      <>
-        <p className="color-primary">
-          <StarFilled />
-          <StarFilled />
-          <StarFilled />
-          <StarFilled />
-          <StarFilled />
-        </p>
-        <p>京都旅行は初めてでしたが、本当にマジでめちゃめちゃ最高でした。</p>
-      </>
-    )
-  },
-  {
-    title: 'めちゃめちゃ最高です',
-    datetime: '2020-04-10',
-    content: (
-      <>
-        <p className="color-primary">
-          <StarFilled />
-          <StarFilled />
-          <StarFilled />
-          <StarFilled />
-        </p>
-        <p>京都旅行は初めてでしたが、本当にマジでめちゃめちゃ最高でした。</p>
-      </>
-    )
-  },
-  {
-    title: 'めちゃめちゃ最高です',
-    datetime: '2020-04-10',
-    content: (
-      <>
-        <p className="color-primary">
-          <StarFilled />
-          <StarFilled />
-          <StarFilled />
-        </p>
-        <p>京都旅行は初めてでしたが、本当にマジでめちゃめちゃ最高でした。</p>
-      </>
-    )
-  },
+  // {
+  //   title: 'めちゃめちゃ最高です',
+  //   datetime: '2020-04-10',
+  //   content: (
+  //     <>
+  //       <p className="color-primary">
+  //         <StarFilled />
+  //         <StarFilled />
+  //         <StarFilled />
+  //         <StarFilled />
+  //         <StarFilled />
+  //       </p>
+  //       <p>京都旅行は初めてでしたが、本当にマジでめちゃめちゃ最高でした。</p>
+  //     </>
+  //   )
+  // },
+  // {
+  //   title: 'めちゃめちゃ最高です',
+  //   datetime: '2020-04-10',
+  //   content: (
+  //     <>
+  //       <p className="color-primary">
+  //         <StarFilled />
+  //         <StarFilled />
+  //         <StarFilled />
+  //         <StarFilled />
+  //       </p>
+  //       <p>京都旅行は初めてでしたが、本当にマジでめちゃめちゃ最高でした。</p>
+  //     </>
+  //   )
+  // },
+  // {
+  //   title: 'めちゃめちゃ最高です',
+  //   datetime: '2020-04-10',
+  //   content: (
+  //     <>
+  //       <p className="color-primary">
+  //         <StarFilled />
+  //         <StarFilled />
+  //         <StarFilled />
+  //       </p>
+  //       <p>京都旅行は初めてでしたが、本当にマジでめちゃめちゃ最高でした。</p>
+  //     </>
+  //   )
+  // },
 ];
 
 class TourDetail extends React.Component {
-  handleToDateSelect = () => {
-    this.props.history.push('/date-select')
+  constructor() {
+    super();
+    this.state = {
+      title: '',
+      price: '',
+      area: '',
+      count: '',
+      time: '',
+      description: '',
+      thumbnail: '',
+      waring: '',
+      slide: [],
+      timelineTime: [],
+      timelinePlace: [],
+      timelineContent: [],
+    };
   }
+  componentDidMount() {
+    console.log(this.props.location.state.id);
+    const url = '/tours.json';
+    axios
+      .get(url, {
+        params: {
+          tourId: this.props.location.state.id,
+        },
+      })
+      .then((res) => {
+        const data = res.data[this.props.location.state.id - 1];
+        this.setState({
+          title: data.title,
+          price: data.price,
+          area: data.area,
+          count: data.count,
+          time: data.time,
+          description: data.description,
+          thumbnail: data.thumbnail,
+          waring: data.waring,
+          slide: data.slide,
+          timelineTime: data.timeline.time,
+          timelinePlace: data.timeline.place,
+          timelineContent: data.timeline.content,
+        });
+      });
+  }
+  handleToDateSelect = () => {
+    this.props.history.push('/date-select');
+  };
   render() {
     let setting = {
       slidesToShow: 4,
@@ -78,42 +124,38 @@ class TourDetail extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             centerMode: false,
-          }
-        }
-      ]
+          },
+        },
+      ],
     };
+    console.log(this.props.location.state.id);
     return (
       <>
-        <Header color={"black"} />
+        <Header color={'black'} />
         <main>
           <section className="tour-detail">
             <div className="tour-detail-info">
-              <Carousel className="tour-detail-slide" {...setting}>
-                <img src="./images/detail_sample.png" alt="" />
-                <img src="./images/detail_sample2.png" alt="" />
-                <img src="./images/detail_sample.png" alt="" />
-                <img src="./images/detail_sample2.png" alt="" />
-                <img src="./images/detail_sample.png" alt="" />
-                <img src="./images/detail_sample2.png" alt="" />
-                <img src="./images/detail_sample.png" alt="" />
-                <img src="./images/detail_sample2.png" alt="" />
-                <img src="./images/detail_sample.png" alt="" />
-                <img src="./images/detail_sample2.png" alt="" />
-              </Carousel>
+              {/* <Carousel className="tour-detail-slide" {...setting}>
+                {this.state.slide.map((data, index) => {
+                  return <img key={index} src={data} />;
+                })}
+              </Carousel> */}
               <div className="sec color-white text-center">
                 <div className="container">
-                  <H2 className="color-white" title={"京都の寺社仏閣穴場めぐりツアー"} />
-                  <span className="omk__badge__white">京都</span>
-                  <p style={{ margin: '1rem auto', maxWidth: '768px' }}>素敵な素敵なガイドさんの最高に最高な案内で京都をとにかくはちゃめちゃに楽しむツアーです。地元のガイドならではの視点で、京都中の穴場という穴場を味わいつくすことができます。</p>
+                  <H2 className="color-white" title={this.state.title} />
+                  <span className="omk__badge__white">{this.state.area}</span>
+                  <p style={{ margin: '1rem auto', maxWidth: '768px' }}>{this.state.description}</p>
                   <Space>
                     <span className="tour-detail-time">
-                      <ClockCircleOutlined /> 12時間
+                      <ClockCircleOutlined /> {this.state.time}
                     </span>
                     <span className="tour-detail-count">
-                      <UserOutlined /> 1名〜
+                      <UserOutlined /> {this.state.count}
                     </span>
                   </Space>
-                  <p className="tour-detail-price" style={{ margin: '1rem 0 0' }}>¥8,000/1名</p>
+                  <p className="tour-detail-price" style={{ margin: '1rem 0 0' }}>
+                    {this.state.price}
+                  </p>
                 </div>
               </div>
             </div>
@@ -122,32 +164,17 @@ class TourDetail extends React.Component {
                 <Row gutter={[32, 32]}>
                   <Col md={16}>
                     <div className="tour-detail-timeline sec">
-                      <H2 title={"ツアーの内容"} />
+                      <H2 title={'ツアーの内容'} />
                       <Timeline>
-                        <Timeline.Item>
-                          <p>8:00~</p>
-                          <p><img src="./images/content_sample.png" alt="" /></p>
-                          <H3 title={"三隆寺"} />
-                          <p style={{ margin: '0' }}>本当に素晴らしい霊的パワー溢れる最高なお寺で、信じられないくらい素敵な体験ができます。</p>
-                        </Timeline.Item>
-                        <Timeline.Item>
-                          <p>8:00~</p>
-                          <p><img src="./images/content_sample.png" alt="" /></p>
-                          <H3 title={"三隆寺"} />
-                          <p style={{ margin: '0' }}>本当に素晴らしい霊的パワー溢れる最高なお寺で、信じられないくらい素敵な体験ができます。</p>
-                        </Timeline.Item>
-                        <Timeline.Item>
-                          <p>8:00~</p>
-                          <p><img src="./images/content_sample.png" alt="" /></p>
-                          <H3 title={"三隆寺"} />
-                          <p style={{ margin: '0' }}>本当に素晴らしい霊的パワー溢れる最高なお寺で、信じられないくらい素敵な体験ができます。</p>
-                        </Timeline.Item>
-                        <Timeline.Item>
-                          <p>8:00~</p>
-                          <p><img src="./images/content_sample.png" alt="" /></p>
-                          <H3 title={"三隆寺"} />
-                          <p style={{ margin: '0' }}>本当に素晴らしい霊的パワー溢れる最高なお寺で、信じられないくらい素敵な体験ができます。</p>
-                        </Timeline.Item>
+                        {this.state.timelineTime.map((data, index) => {
+                          return (
+                            <Timeline.Item key={index}>
+                              <p>{data}~</p>
+                              <H3 title={this.state.timelinePlace[index]} />
+                              <p style={{ margin: '0' }}>{this.state.timelineContent[index]}</p>
+                            </Timeline.Item>
+                          );
+                        })}
                       </Timeline>
                     </div>
                     <div className="tour-profile sec">
@@ -157,7 +184,9 @@ class TourDetail extends React.Component {
                           <img src="./images/profile_icon.png" alt="" />
                         </p>
                         <H3 title="Omomuki運営局" />
-                        <p style={{ margin: '0' }}>自分好みの日本観光に出会えるオプショナルツアー作成サービスを提供します。</p>
+                        <p style={{ margin: '0' }}>
+                          自分好みの日本観光に出会えるオプショナルツアー作成サービスを提供します。
+                        </p>
                       </div>
                     </div>
                     <div className="tour-review sec">
@@ -167,7 +196,7 @@ class TourDetail extends React.Component {
                         header={`${data.length} 件のレビュー`}
                         itemLayout="horizontal"
                         dataSource={data}
-                        renderItem={item => (
+                        renderItem={(item) => (
                           <li>
                             <H3 title={item.title} />
                             <Comment content={item.content} datetime={item.datetime} />
@@ -177,18 +206,9 @@ class TourDetail extends React.Component {
                     </div>
                     <div className="tour-overview sec">
                       <H2 title="ツアー情報" />
-                      <Collapse bordered={false} expandIconPosition={"right"}>
-                        <Panel header="料金に含まれるもの">
-                          <p>宿泊費用</p>
-                        </Panel>
-                        <Panel header="料金に含まれるもの">
-                          <p>宿泊費用</p>
-                        </Panel>
-                        <Panel header="料金に含まれるもの">
-                          <p>宿泊費用</p>
-                        </Panel>
-                        <Panel header="料金に含まれるもの">
-                          <p>宿泊費用</p>
+                      <Collapse bordered={false} expandIconPosition={'right'}>
+                        <Panel header="お申込みについてのご注意">
+                          <p>{this.state.waring}</p>
                         </Panel>
                       </Collapse>
                     </div>
@@ -197,21 +217,27 @@ class TourDetail extends React.Component {
                     <Col md={8}>
                       <Affix offsetTop={10}>
                         <Card>
-                          <H3 className="text-center" title={"京都の寺社仏閣穴場めぐりツアー"} />
+                          <H3 className="text-center" title={this.state.title} />
                           <div className="text-center">
-                            <span className="omk__badge">京都</span>
+                            <span className="omk__badge">{this.state.area}</span>
                           </div>
-                          <p style={{ margin: '1rem 0' }}>素敵な素敵なガイドさんの最高に最高な案内で京都をとにかくはちゃめちゃに楽しむツアーです。地元のガイドならではの視点で、京都中の穴場という穴場を味わいつくすことができます。</p>
+                          <p style={{ margin: '1rem 0' }}>{this.state.description}</p>
                           <div className="text-center">
                             <Space>
-                              <span className="tour-detail-time"><ClockCircleOutlined /> 12時間</span>
-                              <span className="tour-detail-count"><UserOutlined /> 1名〜</span>
+                              <span className="tour-detail-time">
+                                <ClockCircleOutlined /> {this.state.time}
+                              </span>
+                              <span className="tour-detail-count">
+                                <UserOutlined /> {this.state.count}
+                              </span>
                             </Space>
                           </div>
-                          <p className="tour-detail-price text-center" style={{ margin: '1rem 0' }}>¥8,000/1名</p>
-                          <Button onClick={this.handleToDateSelect} type="primary" size="large" block>
-                            <CalendarOutlined />日程を確認する
-                        </Button>
+                          <p className="tour-detail-price text-center" style={{ margin: '1rem 0' }}>
+                            {this.state.price}
+                          </p>
+                          <Button type="primary" size="large" block>
+                            <CalendarOutlined /> 準備中
+                          </Button>
                         </Card>
                       </Affix>
                     </Col>
@@ -225,7 +251,9 @@ class TourDetail extends React.Component {
         <MediaQuery maxDeviceWidth={768}>
           <Affix offsetBottom={16}>
             <div className="container">
-              <Button onClick={this.handleToDateSelect} type="primary" size="large" block><CalendarOutlined />日程を確認する</Button>
+              <Button type="primary" size="large" block>
+                <CalendarOutlined /> 準備中
+              </Button>
             </div>
           </Affix>
         </MediaQuery>
@@ -234,4 +262,4 @@ class TourDetail extends React.Component {
   }
 }
 
-export default withRouter(TourDetail)
+export default withRouter(TourDetail);

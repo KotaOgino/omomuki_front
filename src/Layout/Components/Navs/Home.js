@@ -24,7 +24,7 @@ export default class NavHome extends React.Component {
               </Link>
             </div>
           </Col>
-          <Col>
+          {/* <Col>
             <Row align="middle">
               <Col style={{ marginRight: '2rem' }}>
                 <Link to="/cart" className="nav-link">
@@ -33,13 +33,13 @@ export default class NavHome extends React.Component {
                 </Link>
               </Col>
               <Col>
-                <Link to='/mypage' className="nav-link">
+                <Link to="/mypage" className="nav-link">
                   <UserOutlined style={{ fontSize: '1.5rem' }} />
                   <span>マイページ</span>
                 </Link>
               </Col>
             </Row>
-          </Col>
+          </Col> */}
         </Row>
       </header>
     );

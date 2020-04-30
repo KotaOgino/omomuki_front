@@ -27,21 +27,21 @@ export default class LowerNav extends React.Component {
           </Col>
           <Col>
             <Row align="middle">
-              <Col style={{ marginRight: '2rem' }}>
+              {/* <Col style={{ marginRight: '2rem' }}>
                 <Input size="large" placeholder="エリア・キーワードで探す" prefix={<SearchOutlined />} />
-              </Col>
+              </Col> */}
               <Col style={{ marginRight: '2rem' }}>
                 <Link to="/cart" className="nav-link">
                   <ShoppingCartOutlined style={{ fontSize: '1.5rem' }} />
                   <span>カート</span>
                 </Link>
               </Col>
-              <Col>
-                <Link to='/mypage' className="nav-link">
+              {/* <Col>
+                <Link to="/mypage" className="nav-link">
                   <UserOutlined style={{ fontSize: '1.5rem' }} />
                   <span>マイページ</span>
                 </Link>
-              </Col>
+              </Col> */}
             </Row>
           </Col>
         </Row>

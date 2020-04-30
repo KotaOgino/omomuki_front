@@ -92,7 +92,7 @@ export default class Footers extends React.Component {
                   <img src={logo} alt="logo" />
                 </Link>
               </div>
-              <div className="language-menu">
+              {/* <div className="language-menu">
                 <Space>
                   <Dropdown overlay={language_menu} placement="topCenter">
                     <Button><GlobalOutlined /> 日本語</Button>
@@ -101,12 +101,12 @@ export default class Footers extends React.Component {
                     <Button>日本円 JPY</Button>
                   </Dropdown>
                 </Space>
-              </div>
+              </div> */}
               <div className="other-links">
                 <Space>
-                  <Link to="#"><small>利用規約</small></Link>
-                  <Link to="#"><small>特定商取引法に基づく表示</small></Link>
-                  <Link to="#"><small>プライバシーポリシー</small></Link>
+                  {/* <Link to="/term"><small>利用規約</small></Link> */}
+                  <Link to="/specified-commercial-transaction-act"><small>特定商取引法に基づく表示</small></Link>
+                  <Link to="/privacypolicy"><small>プライバシーポリシー</small></Link>
                 </Space>
               </div>
             </div>
